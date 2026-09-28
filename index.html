@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Voice Reverser – Reverse Your Voice &amp; Audio Online Free</title>
+  <meta name="description" content="Free online voice reverser. Record your voice and play it backwards, reverse any audio file, take the reverse singing challenge and reverse text – right in your browser, nothing is uploaded.">
+  <link rel="canonical" href="https://voicereverser.com/">
+  <meta name="theme-color" content="#0b1033">
+  <meta name="apple-itunes-app" content="app-id=1569002510">
+
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://voicereverser.com/">
+  <meta property="og:title" content="Voice Reverser – Reverse Your Voice & Audio Online">
+  <meta property="og:description" content="Record your voice, play it backwards and try the reverse singing challenge. Free, in your browser.">
+  <meta property="og:image" content="https://voicereverser.com/assets/app-icon.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Voice Reverser",
+        "url": "https://voicereverser.com/",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any (web browser)",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Record your voice and play it backwards, reverse audio files and take the reverse singing challenge online."
+      },
+      {
+        "@type": "MobileApplication",
+        "name": "Reverse Audio Recorder",
+        "operatingSystem": "iOS",
+        "applicationCategory": "MusicApplication",
+        "url": "https://apps.apple.com/app/id1569002510",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "publisher": { "@type": "Organization", "name": "Applorium Ltd" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How do I reverse my voice?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Press Record, allow microphone access, say or sing something and press Stop. Then press Play reversed to hear your voice backwards. You can change the speed and pitch and download the reversed audio as a WAV file." } },
+          { "@type": "Question", "name": "What is the reverse singing challenge?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Record a line of a song, listen to it played backwards, then record yourself singing that backwards version. When your attempt is reversed again it should sound like the original song. The closer it sounds, the better you did." } },
+          { "@type": "Question", "name": "Can I reverse an audio file online?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Choose Upload audio and pick an MP3, WAV, M4A, OGG or even a video file. It is reversed instantly in your browser and you can download the result." } },
+          { "@type": "Question", "name": "Is my recording uploaded anywhere?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Recording, reversing and downloading all happen locally in your browser. Your audio never leaves your device." } },
+          { "@type": "Question", "name": "Is there a voice reverser app for iPhone?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Reverse Audio Recorder for iPhone and iPad lets you record and play sound backwards, reverse text, change speed and pitch, and save and share your recordings." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="Voice Reverser home">
+        <img src="/assets/favicon.png" alt="" width="28" height="28">
+        <span>Voice Reverser</span>
+      </a>
+      <nav class="nav">
+        <a href="#challenge">Challenge</a>
+        <a href="#text">Reverse text</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="https://apps.apple.com/app/id1569002510" data-app-link="header">Get the app</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero + main tool -->
+    <section class="hero">
+      <div class="wrap">
+        <h1>Voice Reverser</h1>
+        <p class="lede">Record your voice and hear it played backwards. Reverse any audio file, take the reverse singing challenge, and download the result. Free, instant, and private.</p>
+
+        <div class="tool card" id="tool">
+          <div class="stage" data-slot="main">
+            <canvas class="wave" aria-hidden="true"></canvas>
+            <div class="stage-hint">Press record and say something. Try your name!</div>
+            <div class="timer" aria-live="polite">0:00</div>
+          </div>
+
+          <div class="controls">
+            <button class="rec-btn" data-action="record" data-slot="main">
+              <span class="rec-dot" aria-hidden="true"></span><span class="rec-label">Record</span>
+            </button>
+            <label class="btn ghost upload">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M11 16V7.8l-3.6 3.6L6 10l6-6 6 6-1.4 1.4L13 7.8V16h-2Zm-6 4v-2h14v2H5Z"/></svg>
+              Upload audio
+              <input type="file" accept="audio/*,video/*" data-upload="main" hidden>
+            </label>
+          </div>
+
+          <div class="playback" data-playback="main" hidden>
+            <div class="play-row">
+              <button class="btn primary" data-action="play-reversed" data-slot="main">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M18 5v14L7 12l11-7ZM6 5v14H4V5h2Z"/></svg>
+                <span>Play reversed</span>
+              </button>
+              <button class="btn" data-action="play-original" data-slot="main">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7 5v14l11-7L7 5Z"/></svg>
+                <span>Play original</span>
+              </button>
+            </div>
+            <div class="option-row">
+              <label class="speed">
+                <span>Speed &amp; pitch</span>
+                <input type="range" min="0.5" max="2" step="0.05" value="1" data-speed>
+                <output data-speed-out>1.00×</output>
+              </label>
+              <div class="save-row">
+                <button class="btn small" data-action="download" data-slot="main">Download WAV</button>
+                <button class="btn small" data-action="share" data-slot="main" hidden>Share</button>
+              </div>
+            </div>
+          </div>
+
+          <p class="error" data-error hidden></p>
+        </div>
+
+        <aside class="app-nudge" id="app-nudge" hidden>
+          <img src="/assets/app-icon.jpg" alt="" width="44" height="44">
+          <p><strong>Keep your reversed recordings.</strong> Save, replay and share them from your iPhone with Reverse Audio Recorder.</p>
+          <a href="https://apps.apple.com/app/id1569002510" data-app-link="nudge" class="btn primary small">Get it free</a>
+        </aside>
+
+        <p class="privacy">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm-1 14-4-4 1.4-1.4 2.6 2.6 5.6-5.6L18 9l-7 7Z"/></svg>
+          Your audio stays on your device. Nothing is uploaded.
+        </p>
+      </div>
+    </section>
+
+    <!-- Reverse singing challenge -->
+    <section class="section" id="challenge">
+      <div class="wrap">
+        <h2>Reverse singing challenge</h2>
+        <p class="section-lede">Sing a song backwards and see if it comes out right. Record a line, learn how it sounds reversed, sing that back, and reverse your attempt. Can you make it sound like the original?</p>
+
+        <ol class="steps">
+          <li class="step card">
+            <div class="step-head"><span class="step-num">1</span><h3>Record the original</h3></div>
+            <p>Sing a short line of a song you know. Keep it to 3–5 seconds.</p>
+            <div class="mini-stage" data-slot="original"><canvas class="wave" aria-hidden="true"></canvas><div class="timer">0:00</div></div>
+            <div class="step-actions">
+              <button class="rec-btn small" data-action="record" data-slot="original"><span class="rec-dot" aria-hidden="true"></span><span class="rec-label">Record</span></button>
+              <button class="btn small" data-action="play-original" data-slot="original" disabled>Play</button>
+            </div>
+          </li>
+          <li class="step card">
+            <div class="step-head"><span class="step-num">2</span><h3>Learn it backwards</h3></div>
+            <p>Listen to your line reversed. Slow it down and replay it until you can copy the sounds.</p>
+            <div class="step-actions">
+              <button class="btn primary small" data-action="play-reversed" data-slot="original" disabled>Play reversed</button>
+            </div>
+            <label class="speed compact">
+              <span>Speed</span>
+              <input type="range" min="0.5" max="1.5" step="0.05" value="1" data-speed>
+              <output data-speed-out>1.00×</output>
+            </label>
+          </li>
+          <li class="step card">
+            <div class="step-head"><span class="step-num">3</span><h3>Sing the reversed version</h3></div>
+            <p>Now record yourself imitating the backwards audio as closely as you can.</p>
+            <div class="mini-stage" data-slot="attempt"><canvas class="wave" aria-hidden="true"></canvas><div class="timer">0:00</div></div>
+            <div class="step-actions">
+              <button class="rec-btn small" data-action="record" data-slot="attempt"><span class="rec-dot" aria-hidden="true"></span><span class="rec-label">Record</span></button>
+              <button class="btn small" data-action="play-original" data-slot="attempt" disabled>Play</button>
+            </div>
+          </li>
+          <li class="step card highlight">
+            <div class="step-head"><span class="step-num">4</span><h3>The reveal</h3></div>
+            <p>Your attempt gets reversed again. If you nailed it, you'll hear the original song.</p>
+            <div class="step-actions">
+              <button class="btn primary small" data-action="play-reversed" data-slot="attempt" disabled>Play my result</button>
+              <button class="btn small" data-action="compare" disabled>Original vs. result</button>
+            </div>
+            <div class="step-actions">
+              <button class="btn small" data-action="download" data-slot="attempt" disabled>Download result</button>
+            </div>
+          </li>
+        </ol>
+        <p class="tip">Tip: short phrases with clear vowels work best. Try "Happy birthday to you" or the chorus of your favourite song.</p>
+      </div>
+    </section>
+
+    <!-- App promo -->
+    <section class="section app-promo" id="app">
+      <div class="wrap promo-grid">
+        <div class="promo-copy">
+          <div class="app-id">
+            <img src="/assets/app-icon.jpg" alt="Reverse Audio Recorder app icon" width="72" height="72">
+            <div>
+              <p class="app-name">Reverse Audio Recorder</p>
+              <p class="app-sub">Record &amp; play sound backwards</p>
+              <p class="app-rating" aria-label="Rated 4.4 out of 5 on the App Store"><span aria-hidden="true">★★★★☆</span> 4.4 on the App Store</p>
+            </div>
+          </div>
+          <h2>Take the voice reverser with you</h2>
+          <p>The iPhone app does everything this page does, and keeps your recordings. Reverse songs at a party, make secret backwards messages and challenge your friends.</p>
+          <ul class="features">
+            <li>Record your voice and play it backwards instantly</li>
+            <li>Reverse text and record yourself reading it</li>
+            <li>Change playback speed and shift the pitch</li>
+            <li>Save your recordings and share them with friends</li>
+            <li>Works on iPhone, iPad and Mac</li>
+          </ul>
+          <a class="store-badge" href="https://apps.apple.com/app/id1569002510" data-app-link="promo">
+            <img src="/assets/app-store-badge.svg" alt="Download on the App Store" width="180" height="60">
+          </a>
+        </div>
+        <div class="shots" aria-label="App screenshots">
+          <img src="/assets/screenshot-1.jpg" alt="Reverse Audio Recorder: write and reverse text" width="392" height="696" loading="lazy">
+          <img src="/assets/screenshot-2.jpg" alt="Reverse Audio Recorder: record yourself and reverse audio" width="392" height="696" loading="lazy">
+          <img src="/assets/screenshot-3.jpg" alt="Reverse Audio Recorder: save and share your recordings" width="392" height="696" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Text reverser -->
+    <section class="section" id="text">
+      <div class="wrap">
+        <h2>Reverse text</h2>
+        <p class="section-lede">Flip any text backwards, then read it out loud and reverse your recording. You'll hear something surprisingly close to the original.</p>
+        <div class="card text-tool">
+          <label class="sr-only" for="text-in">Text to reverse</label>
+          <textarea id="text-in" rows="4" placeholder="Type or paste text here…">Roses are red, violets are blue</textarea>
+          <div class="text-modes" role="radiogroup" aria-label="Reverse mode">
+            <button class="chip" role="radio" aria-checked="true" data-mode="chars">Reverse text</button>
+            <button class="chip" role="radio" aria-checked="false" data-mode="words">Reverse word order</button>
+            <button class="chip" role="radio" aria-checked="false" data-mode="each">Reverse each word</button>
+            <button class="chip" role="radio" aria-checked="false" data-mode="flip">Upside down</button>
+          </div>
+          <label class="sr-only" for="text-out">Reversed text</label>
+          <textarea id="text-out" rows="4" readonly></textarea>
+          <div class="text-actions">
+            <button class="btn small" id="copy-text">Copy</button>
+            <a class="btn small ghost" href="#tool" id="read-it">Now record yourself reading it ↑</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works / SEO copy -->
+    <section class="section" id="how">
+      <div class="wrap">
+        <h2>How to reverse your voice</h2>
+        <div class="how-grid">
+          <div>
+            <h3>1. Record or upload</h3>
+            <p>Tap <strong>Record</strong> and allow microphone access, or upload an MP3, WAV, M4A or video file to reverse audio online.</p>
+          </div>
+          <div>
+            <h3>2. Play it backwards</h3>
+            <p>Hit <strong>Play reversed</strong> to hear your voice backwards. Use the speed slider to make it deeper and slower or higher and faster.</p>
+          </div>
+          <div>
+            <h3>3. Save and share</h3>
+            <p>Download the reversed audio as a WAV file, or get the <a href="https://apps.apple.com/app/id1569002510" data-app-link="how">iPhone app</a> to keep all your recordings in one place.</p>
+          </div>
+        </div>
+
+        <div class="prose">
+          <h3>What does a reversed voice sound like?</h3>
+          <p>Speech played backwards sounds like a strange foreign language. Consonants that normally start with a sharp attack, like "t" or "k", fade in instead, and vowels glide the wrong way. That's why reverse speech is so fun to listen to, and so hard to imitate.</p>
+          <h3>Why is reverse singing so hard?</h3>
+          <p>To sing a song backwards you have to reproduce sounds your mouth never normally makes, in the right order and at the right pitch. The reverse audio challenge became popular on TikTok because even familiar songs come out hilariously wrong on the first try.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap narrow">
+        <h2>Frequently asked questions</h2>
+        <details>
+          <summary>How do I reverse my voice?</summary>
+          <p>Press Record, allow microphone access, say or sing something and press Stop. Then press Play reversed to hear your voice backwards. You can change the speed and pitch and download the reversed audio as a WAV file.</p>
+        </details>
+        <details>
+          <summary>What is the reverse singing challenge?</summary>
+          <p>Record a line of a song, listen to it played backwards, then record yourself singing that backwards version. When your attempt is reversed again it should sound like the original song. The closer it sounds, the better you did.</p>
+        </details>
+        <details>
+          <summary>Can I reverse an audio file online?</summary>
+          <p>Yes. Choose Upload audio and pick an MP3, WAV, M4A, OGG or even a video file. It is reversed instantly in your browser and you can download the result.</p>
+        </details>
+        <details>
+          <summary>Is my recording uploaded anywhere?</summary>
+          <p>No. Recording, reversing and downloading all happen locally in your browser. Your audio never leaves your device.</p>
+        </details>
+        <details>
+          <summary>Is there a voice reverser app for iPhone?</summary>
+          <p>Yes. <a href="https://apps.apple.com/app/id1569002510" data-app-link="faq">Reverse Audio Recorder</a> for iPhone and iPad lets you record and play sound backwards, reverse text, change speed and pitch, and save and share your recordings.</p>
+        </details>
+        <details>
+          <summary>The microphone isn't working. What can I do?</summary>
+          <p>Make sure you allowed microphone access when your browser asked. If you blocked it, click the lock or site-settings icon in the address bar and allow the microphone, then reload the page. Recording needs a secure (https) connection.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> VoiceReverser.com · Made by <a href="https://apps.apple.com/app/id1569002510" data-app-link="footer">Applorium</a></p>
+      <p class="muted">Apple, the Apple logo and iPhone are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
